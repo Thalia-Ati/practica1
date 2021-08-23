@@ -40,4 +40,4 @@ jobs:
         heroku_app_name: "practica-1-master"
         heroku_email:  ${{secrets.HEROKU_EMAIL}}
         buildpack: 'heroku/python'
-        usedocker: false
+        usedocker: true
