@@ -8,10 +8,10 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route("/finance_google")
+@app.route("/catfact")
 def catfact():
 
-    url = "https://www.gstatic.com/_/mss/boq-finance/_/ss/k=boq-finance.GoogleFinanceUi.J0rBkVVlxzw.L.X.O/am=AEgIBAAAAACgC8AnAAAAAAAAABOAAAAAAAAQLQIg/d=1/ed=1/rs=AC0raVKfo7Jf5ZfqlX_XTaXyGnXgs9VyDA/m=entitydetailsview,_b,_tp"
+    url = "https://catfact.ninja/fact"
     r = requests.get(url)
     fact = r.json()
     printable_fact = fact['fact']
