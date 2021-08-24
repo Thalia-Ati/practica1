@@ -2,17 +2,19 @@ from flask import Flask, Response
 import requests
 import json
 
+from werkzeug.datastructures import Headers
+
 app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route("/face")
+@app.route("/practica1")
 def catfact():
 
     url = "https://geoip-js.com/geoip/v2.1/country/me?referrer=https%3A%2F%2Fwww.octoparse.es"
-    r = requests.get(url)
+    r = requests.get(url,headers=Headers)
     fact = r.json()
     printable_fact = fact['fact']
     #print to console
