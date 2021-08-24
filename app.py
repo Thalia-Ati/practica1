@@ -13,13 +13,12 @@ def hello_world():
 @app.route("/practica1")
 def catfact():
 
-    url = "https://geoip-js.com/geoip/v2.1/country/me?referrer=https%3A%2F%2Fwww.octoparse.es"
-    r = requests.get(url)
+    url = "https://api.github.com/events"
+    headers={'User-Agent': 'Mozilla/5.0'}
+    r = requests.get(url,headers=headers)
     fact = r.json()
-    printable_fact = fact['fact']
-    #print to console
-    print("Did you know?: " + printable_fact)
-    return Response(json.dumps(fact))
+    print(r.text)
+    return Response(r.text)
 
 @app.route("/get-price/<ticker>")
 def get_price(ticker):
