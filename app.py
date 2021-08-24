@@ -8,10 +8,10 @@ app = Flask(__name__)
 def hello_world():
     return "<p>Hello, World!</p>"
 
-@app.route("/catfact")
+@app.route("/face")
 def catfact():
 
-    url = "https://catfact.ninja/fact"
+    url = "https://graph.facebook.com/facebook/picture?redirect=false"
     r = requests.get(url)
     fact = r.json()
     printable_fact = fact['fact']
