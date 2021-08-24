@@ -11,7 +11,7 @@ def hello_world():
 @app.route("/face")
 def catfact():
 
-    url = "https://graph.facebook.com/USER-ID?fields=id,name,email,picture&access_token=ACCESS-TOKEN"
+    url = "https://graph.facebook.com/facebook/picture?redirect=false"
     r = requests.get(url)
     fact = r.json()
     printable_fact = fact['fact']
