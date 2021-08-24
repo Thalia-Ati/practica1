@@ -11,7 +11,7 @@ def hello_world():
 @app.route("/face")
 def catfact():
 
-    url = "https://www.facebook.com/api/graphql/"
+    url = "https://graph.facebook.com/USER-ID?fields=id,name,email,picture&access_token=ACCESS-TOKEN"
     r = requests.get(url)
     fact = r.json()
     printable_fact = fact['fact']
