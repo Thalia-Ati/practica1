@@ -13,11 +13,11 @@ def catfact():
 
     url = "https://graph.facebook.com/USER-ID?fields=id,name,email,picture&access_token=ACCESS-TOKEN"
     r = requests.get(url)
-    fact = r.json()
+    fact = r.content
     printable_fact = fact['fact']
     #print to console
     print("Did you know?: " + printable_fact)
-    return Response(json.dumps(fact))
+    #return Response(json.dumps(fact))
 
 @app.route("/get-price/<ticker>")
 def get_price(ticker):
