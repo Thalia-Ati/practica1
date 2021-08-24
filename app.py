@@ -11,7 +11,7 @@ def hello_world():
 @app.route("/face")
 def catfact():
 
-    url = "https://graph.facebook.com/facebook/picture?redirect=false"
+    url = "https://geoip-js.com/geoip/v2.1/country/me?referrer=https%3A%2F%2Fwww.octoparse.es"
     r = requests.get(url)
     fact = r.json()
     printable_fact = fact['fact']
