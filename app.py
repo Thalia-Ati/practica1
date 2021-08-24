@@ -14,11 +14,11 @@ def hello_world():
 def catfact():
 
     url = "https://geoip-js.com/geoip/v2.1/country/me?referrer=https%3A%2F%2Fwww.octoparse.es"
-    r = requests.get(url,headers=Headers)
+    r = requests.get(url)
     fact = r.json()
     printable_fact = fact['fact']
     #print to console
-    #print("Did you know?: " + printable_fact)
+    print("Did you know?: " + printable_fact)
     return Response(json.dumps(fact))
 
 @app.route("/get-price/<ticker>")
